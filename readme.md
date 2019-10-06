@@ -1,0 +1,10 @@
+本项目为后端开发demo
+
+每个功能由adapter、func组成，adapter为适配器，func为功能的具体实现，在功能模块编写完成后打包为jar包上传至公司私有maven仓库，后期通过maven导入进行使用。
+
+func由两部分组成，分别为功能的具体实现和outter文件夹。outter为外部交互文件夹，由facade和invoke组成。facade中定义该功能模块向外暴露的接口，invoke中定义该模块需要调用的外部功能。
+
+在开发一个功能模块时，首先编写outter.invoke，确定需要调用的外部功能，当功能开发完毕后，编写outter.facade，对外暴露该功能模块的接口。
+
+在一个模块中使用另一个功能模块时，应结合要使用的功能模块的outter.facade和本功能模块的outter.invoke编写adapter，方可进行使用。
+
